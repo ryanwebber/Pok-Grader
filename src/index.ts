@@ -77,6 +77,11 @@ function gradePokemon(name: string): number {
     return sumOfStats;
 }
 
+function imageForPokemon(name: string): string {
+    let pokemon = standardPokedex[name.toLowerCase()];
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.num}.png`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Insert the standard Pokedex into the DOM
     const container = document.getElementById('list');
@@ -103,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         noNode.href = `https://www.serebii.net/pokedex-swsh/${key}/`
 
         let imgNode = domNode.querySelector("[data-tag-image]") as HTMLImageElement;
-        let imgSource = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.num}.png`;
+        let imgSource = imageForPokemon(key);
         imgNode.src = imgSource;
         imgNode.alt = pokemon.name;
 
@@ -118,6 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let cardNode = domNode.querySelector("[data-tag-card]") as HTMLDivElement;
         cardNode.classList.add(cardColors[gradeLetter]);
         cardNode.id = `${pokemon.name}`;
+
+        let typesNode = domNode.querySelector("[data-tag-types]") as HTMLParagraphElement;
+        typesNode.innerText = pokemon.types.join(' / ');
+
+        let evolutionNode = domNode.querySelector("[data-tag-evolution]") as HTMLDivElement;
+        if (!pokemon.evos || pokemon.evos.length == 0) {
+            evolutionNode.style.display = 'none';
+        } else {
+            let imageNode = evolutionNode.querySelector("[data-tag-evolution-img]") as HTMLImageElement;
+            let imgSource = imageForPokemon(pokemon.evos[0]);
+            imageNode.src = imgSource;
+        }
 
         container.appendChild(domNode);
     }

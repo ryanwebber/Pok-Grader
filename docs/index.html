@@ -22,16 +22,24 @@
     <div class="flex flex-wrap justify-evenly items-stretch place-content-evenly gap-4 m-4" id="list">
     </div>
     <template id="template-pokemon-item">
-        <div class=" max-w-full min-w-36 min-h-64 rounded-lg border-2 shadow-md bg-white" data-tag-card>
+        <div class=" max-w-full min-w-36 min-h-64 rounded-lg border-2 shadow-md bg-white relative overflow-hidden"
+            data-tag-card>
             <div class="absolute w-8 h-8 flex justify-center items-center rounded-br-lg" data-tag-stamp>
                 <p class="text-center font-bold text-white" data-tag-grade>A</p>
+            </div>
+            <div class="absolute w-8 h-8 flex justify-center items-center rounded-bl-lg right-0 bg-gray-100 p-1"
+                data-tag-evolution>
+                <img class="mx-auto w-full opacity-25" loading="lazy" style="filter: brightness(0%);"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png"
+                    data-tag-evolution-img />
             </div>
             <div class="p-4 mt-6">
                 <h2 class="text-center text-lg font-bold" data-tag-name>Charizard</h2>
                 <h3 class="text-center">
-                    <a href="#" class="text-md text-blue-500 hover:underline" data-tag-no>#003</a>
+                    <a href="#" class="text-sm text-blue-500 hover:underline" data-tag-no>#003</a>
                 </h3>
-                <img class="w-32 mx-auto mt-2" loading="lazy" alt="Charizard" data-tag-image />
+                <img class="w-24 mx-auto my-3" loading="lazy" alt="Charizard" data-tag-image />
+                <p class="text-center text-xs text-gray-500" data-tag-types>Grass / Water</p>
             </div>
         </div>
     </template>
