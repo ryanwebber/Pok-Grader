@@ -1,4 +1,4 @@
-# PokèGrader
+![PokèGrader](/docs/pokegrader.png)
 
 A small, spoiler-free Pokèdex. The purpose of this site is to provide a simple 
 way to tell if a Pokèmon is worth catching or not, without giving away too
