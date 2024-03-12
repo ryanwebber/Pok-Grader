@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .card-s {
+        @apply border-amber-500;
+    }
+
+    .card-a {
+        @apply border-green-500;
+    }
+
+    .card-b {
+        @apply border-blue-500;
+    }
+
+    .card-c {
+        @apply border-pink-500;
+    }
+
+    .card-d {
+        @apply border-red-500;
+    }
+
+    .stamp-s {
+        @apply bg-amber-500;
+    }
+
+    .stamp-a {
+        @apply bg-green-500;
+    }
+
+    .stamp-b {
+        @apply bg-blue-500;
+    }
+
+    .stamp-c {
+        @apply bg-pink-500;
+    }
+
+    .stamp-d {
+        @apply bg-red-500;
+    }
+}
