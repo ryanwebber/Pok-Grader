@@ -159,6 +159,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('cards-list').appendChild(cardsFrag);
         document.getElementById('autocomplete-list').appendChild(autocompleteFrag);
+
+        // HACK: Adding to a data-list doesn't update the autocomplete list,
+        // so we need to poke it?
+        (document.getElementById('pokemon-search') as HTMLInputElement).removeAttribute('list');
+        (document.getElementById('pokemon-search') as HTMLInputElement).setAttribute('list', 'autocomplete-list');
     }, 1);
 
     let searchInput = document.getElementById('pokemon-search') as HTMLInputElement;
